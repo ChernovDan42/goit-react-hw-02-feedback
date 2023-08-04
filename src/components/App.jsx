@@ -1,8 +1,11 @@
 import { Component } from "react";
-import { Statistics } from "./Statistics";
-import { FeedbackOptions } from "./FeedbackOptions";
-import { Section } from "./Section";
-import { Notification } from "./Notification";
+import { Statistics } from "./Statistics/Statistics";
+import { FeedbackOptions } from "./FeedbackOptions/FeedbackOptions";
+import { Section } from "./Section/Section";
+import { Notification } from "./Notifications/Notification";
+import css from './App.module.css'
+
+
 
 
 
@@ -54,7 +57,7 @@ const { good, neutral, bad } = this.state;
    
     
     return (
-      <>
+      <div className={css.App}>
         <Section title='Please leave feedback'>
         {stateLength.map(el => {
           return (
@@ -83,7 +86,7 @@ const { good, neutral, bad } = this.state;
         
           </Section>
       
-</>
+</div>
  )
 }
 
