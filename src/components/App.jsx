@@ -12,9 +12,7 @@ export class App extends Component {
     bad: 0,
   };
 
-  handleClick = e => {
-    const { name } = e.target;
-
+  handleClick = name => {
     this.setState(prevState => ({
       [name]: prevState[name] + 1,
     }));
@@ -44,15 +42,10 @@ export class App extends Component {
     return (
       <div className={css.App}>
         <Section title="Please leave feedback">
-          {stateLength.map(option => {
-            return (
-              <FeedbackOptions
-                key={option}
-                options={option}
-                onLeaveFeedback={this.handleClick}
-              />
-            );
-          })}
+          <FeedbackOptions
+            options={stateLength}
+            onLeaveFeedback={this.handleClick}
+          />
         </Section>
 
         <Section title="Statistics">
